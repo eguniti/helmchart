@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: "520131833157.dkr.ecr.ap-south-1.amazonaws.com/frontend"
+  repository: "131964999278.dkr.ecr.us-east-1.amazonaws.com/frontend"
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v1.9"
 
 env:
   API_HOST: "http://backend"
@@ -54,7 +54,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
 
 ingress:

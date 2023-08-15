@@ -64,9 +64,17 @@ spec:
       {{- end }}
       {{- with .Values.affinity }}
       affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/instance
+                operator: In
+                values:
+                - frontend
+            topologyKey: kubernetes.io/hostname
+            namespaces:
+            - default      
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}

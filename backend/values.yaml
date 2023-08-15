@@ -5,16 +5,16 @@
 replicaCount: 1
 
 image:
-  repository: "520131833157.dkr.ecr.ap-south-1.amazonaws.com/backend"
+  repository: "131964999278.dkr.ecr.us-east-1.amazonaws.com/backend"
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 env:
-  DB: ""
-  DBUSER: ""
-  DBPASS: ""
-  DBHOST: ""
+  DB: "postgres"
+  DBUSER: "postgres"
+  DBPASS: "postgres@123"
+  DBHOST: "postgres-postgresql"
   DBPORT: "5432"
 
 probes:
@@ -91,7 +91,7 @@ autoscaling:
   minReplicas: 2
   maxReplicas: 5
   targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 
