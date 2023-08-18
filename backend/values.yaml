@@ -8,7 +8,7 @@ image:
   repository: "131964999278.dkr.ecr.us-east-1.amazonaws.com/backend"
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: ""
 
 env:
   DB: "postgres"
