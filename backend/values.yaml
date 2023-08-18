@@ -11,11 +11,11 @@ image:
   tag: ""
 
 env:
-  DB: "postgres"
-  DBUSER: "postgres"
-  DBPASS: "postgres@123"
-  DBHOST: "postgres-postgresql"
-  DBPORT: "5432"
+  DB: ""
+  DBUSER: ""
+  DBPASS: ""
+  DBHOST: ""
+  DBPORT: ""
 
 probes:
   enabled: true
